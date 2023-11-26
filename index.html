@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            margin-top: 6px;
+            display: block;
+
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="fname">Nome: </label>
+            <input id="fname" type="text">
+        </div>
+        <div>
+            <label for="lname">Cognome: </label>
+            <input id="lname" type="text">
+        </div>
+        <div>
+            <input id="submit" type="submit">
+        </div>
+    </form>
+    <p></p>
+    <script>
+        const form = document.querySelector('form');
+        const nome = document.getElementById('fname');
+        const cognome = document.getElementById('lname');
+        const paragrafo = document.querySelector('p');
+
+        form.onsubmit = function (e) {
+            if (nome.value === '' || cognome.value === '') {
+                e.preventDefault();
+                paragrafo.textContent = 'you need to fill in both names!';
+            }
+        } 
+    </script>
+</body>
+</html>
